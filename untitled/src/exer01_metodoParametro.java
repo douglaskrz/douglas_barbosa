@@ -18,10 +18,4 @@ public class exer01_metodoParametro {
 
 
         }
-
    }
-
-
-
-
-}
