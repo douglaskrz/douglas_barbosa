@@ -10,12 +10,14 @@ public class exer_08metodosComParametros {
 
         System.out.println("Informe a segunda nota: ");
         double nota2 = sc.nextDouble();
+
         System.out.println("Informe a terceira nota: ");
         double nota3 = sc.nextDouble();
 
-
         double media = mediaAritmetica(nota1, nota2, nota3);
         System.out.println("A média é: "+media);
+        // ou System.out.println(mediaAritmetica(nota1, nota2, nota3));
+
 
 
         sc.close();
