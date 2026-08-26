@@ -15,17 +15,18 @@ public class exer_08metodosComParametros {
         double nota3 = sc.nextDouble();
 
         double media = mediaAritmetica(nota1, nota2, nota3);
-        System.out.println("A média é: "+media);
+        System.out.println("A média é: " + media);
         // ou System.out.println(mediaAritmetica(nota1, nota2, nota3));
 
 
 
         sc.close();
     }
-    public static double mediaAritmetica(double notaUM, double notaDOIS, double notaTRES){
+    public static double mediaAritmetica(double notaUM, double notaDOIS, double notaTRES) {
 
+        if (notaUM < 0 || notaUM > 10 || notaDOIS < 0 || notaDOIS > 10 || notaTRES < 0 || notaTRES > 10) {
+            return 0;
+        }
         return (notaUM + notaDOIS + notaTRES)/3;
 
     }
-
-}
