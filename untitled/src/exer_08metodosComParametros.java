@@ -19,14 +19,15 @@ public class exer_08metodosComParametros {
         // ou System.out.println(mediaAritmetica(nota1, nota2, nota3));
 
 
-
         sc.close();
     }
+
     public static double mediaAritmetica(double notaUM, double notaDOIS, double notaTRES) {
 
         if (notaUM < 0 || notaUM > 10 || notaDOIS < 0 || notaDOIS > 10 || notaTRES < 0 || notaTRES > 10) {
             return 0;
         }
-        return (notaUM + notaDOIS + notaTRES)/3;
+        return (notaUM + notaDOIS + notaTRES) / 3;
 
     }
+}
