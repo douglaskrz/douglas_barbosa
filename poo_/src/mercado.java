@@ -1,4 +1,4 @@
-public class mercado_exer02 {
+public class mercado {
     String nomeMercado;
     int macasVendidas;
     double precoMaca;

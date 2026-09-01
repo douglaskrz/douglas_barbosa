@@ -1,10 +1,8 @@
 public class exer02_poo {
 
-    mercado_exer02;
 
-    nomeMercado
+    mercado Joinville = new mercado();
 
-    Mercado unidadeJoinville = new Mercado();
 
 
 }
