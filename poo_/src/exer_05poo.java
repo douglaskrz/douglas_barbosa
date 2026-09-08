@@ -6,12 +6,14 @@ public class exer_05poo {
         iF.identificacao = "abc123";
         iF.nome = "Douglas";
         iF.sobrenome = "Barbosa";
-        iF.salario = 4000;
+        iF.salario = 10000;
 
         System.out.println("Identificação do funcionário: "+iF.identificacao);
-        System.out.println("Nome: ");
+        System.out.println("Nome: " + iF.nomeCompleto());
         System.out.println("Salário anual: R$"+iF.salarioAnual());
 
+
     }
+
 
 }

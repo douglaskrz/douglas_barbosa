@@ -5,8 +5,13 @@ public class identificacaoFuncionario {
     String sobrenome;
     double salario;
 
+
+
     public double salarioAnual(){
         return 12*salario;
+    }
+    public String nomeCompleto(){
+        return (nome + " " + sobrenome);
     }
 
 
