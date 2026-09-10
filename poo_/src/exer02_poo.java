@@ -2,36 +2,87 @@ public class exer02_poo {
 
     public static void main(String[] args) {
 
-        mercado unidadeJoinville = new mercado();
+        mercado unidadeJoinville = new mercado("Giassi", 500, 2, 400, 2.5);
+        mercado unidadeBlumenau = new mercado("Angeloni", 450, 1.8, 420, 2.2);
+        mercado unidadeFlorianopolis = new mercado("Fort", 500, 2, 470, 2.4);
 
-        unidadeJoinville.nomeMercado = "Carol";
-        unidadeJoinville.macasVendidas = 350;
-        unidadeJoinville.precoMaca = 2;
-        unidadeJoinville.laranjasVendidas = 200;
-        unidadeJoinville.precoLaranja = 2;
+        mercado mercados[] = { unidadeBlumenau, unidadeFlorianopolis, unidadeJoinville };
 
-        mercado unidadeBlumenau = new mercado();
+        double maiorReceitaMacas = 0;
 
-        unidadeBlumenau.nomeMercado = "Giassi";
-        unidadeBlumenau.macasVendidas = 250;
-        unidadeBlumenau.precoMaca = 1.9;
-        unidadeBlumenau.laranjasVendidas = 750;
-        unidadeBlumenau.precoLaranja = 2.7;
+        mercado mercadoMaiorReceitaMacas = null;
 
-        mercado unidadeFlorianopolis = new mercado();
+        for (int i = 0; i < mercados.length; i++) {
 
-        unidadeFlorianopolis.nomeMercado = "Cooper";
-        unidadeFlorianopolis.macasVendidas = 700;
-        unidadeFlorianopolis.precoMaca = 2;
-        unidadeFlorianopolis.laranjasVendidas = 670;
-        unidadeFlorianopolis.precoLaranja = 2.5;
+            if (mercados[i].calcularReceitaMacas() > maiorReceitaMacas) {
+                maiorReceitaMacas = mercados[i].calcularReceitaMacas();
+                mercadoMaiorReceitaMacas = mercados[i];
+            }
+        }
 
-        System.out.println(unidadeBlumenau.nomeMercado + " vendeu " + unidadeBlumenau.macasVendidas + " maçãs a R$"
-                + unidadeBlumenau.precoMaca);
+        System.out.println("Quem teve a maior receita de maçãs: " + mercadoMaiorReceitaMacas + " faturou: "
+                + mercadoMaiorReceitaMacas.calcularReceitaMacas());
 
-        System.out.println(unidadeFlorianopolis.nomeMercado + " vendeu " + unidadeFlorianopolis.laranjasVendidas + " laranjas a R$"
-                + unidadeFlorianopolis.precoLaranja);
+        double menorReceitaLaranjas = Double.MAX_VALUE;
 
+        mercado mercadoMenorReceitaLaranjas = null;
+
+
+        for (int i = 0; i < mercados.length; i++) {
+
+            if (mercados[i].calcularReceitaLaranjas() < menorReceitaLaranjas) {
+
+                menorReceitaLaranjas = mercados[i].calcularReceitaLaranjas();
+
+                mercadoMenorReceitaLaranjas = mercados[i];
+            }
+        }
+
+        System.out.println("Quem teve a menor receita de laranjas: " + mercadoMenorReceitaLaranjas
+                + " que vendeu R$" + mercadoMenorReceitaLaranjas.calcularReceitaLaranjas());
+
+        double segundaMaiorReceitaTotal = 0;
+
+        mercado mercadoSegundaMaiorReceitaTotal = null;
+
+        double maiorReceitaTotal = 0;
+
+        for (int i = 0; i < mercados.length; i++) {
+
+            if (mercados[i].calcularReceitaTotal() > maiorReceitaTotal) {
+
+                maiorReceitaTotal = mercados[i].calcularReceitaTotal();
+            }
+        }
+
+        for (int i = 0; i < mercados.length; i++) {
+
+            if (mercados[i].calcularReceitaTotal() > segundaMaiorReceitaTotal
+                    && mercados[i].calcularReceitaTotal() != maiorReceitaTotal) {
+
+                segundaMaiorReceitaTotal = mercados[i].calcularReceitaTotal();
+                mercadoSegundaMaiorReceitaTotal = mercados[i];
+            }
+        }
+
+        System.out.println(
+                "Mercado que teve a segunda maior receita total: " + mercadoSegundaMaiorReceitaTotal);
+
+        double receitaGeralMacas = 0;
+        double receitaGeralLaranjas = 0;
+
+        for (int i = 0; i < mercados.length; i++) {
+            receitaGeralLaranjas += mercados[i].calcularReceitaLaranjas();
+            receitaGeralMacas += mercados[i].calcularReceitaMacas();
+        }
+
+        if (receitaGeralMacas > receitaGeralLaranjas) {
+            System.out.println("A franquia teve uma receita maior com maçãs");
+        } else if (receitaGeralLaranjas > receitaGeralMacas) {
+            System.out.println("A franquia teve uma receita maior com laranjas");
+        } else {
+            System.out.println("As receitas foram iguais");
+        }
     }
 }
 
