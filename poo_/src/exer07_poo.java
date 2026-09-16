@@ -7,6 +7,19 @@ public class exer07_poo {
     aeronave zeroTres = new aeronave("zeroTRES", 876, 1.00, 200000.00, 50.00);
     aeronave zeroQuatro = new aeronave("zeroQUATRO", 700, 1.00, 290000.00, 33.00);
 
+        zeroUm.setModelo("zeroUmUm");
+        System.out.println(zeroUm.getModelo());
+
+        zeroDois.setPassageiros(-30);
+        System.out.println(zeroDois.getPassageiros());
+
+        zeroTres.setVelocidadeMax(3);
+        System.out.println(zeroDois.getVelocidadeMax());
+
+        zeroQuatro.setCapacidadeCombustivel(2);
+        System.out.println(zeroQuatro.getCapacidadeCombustivel());
+
+
         aeronave[] aeronaves = { zeroUm, zeroDois, zeroTres, zeroQuatro};
 
         double maiorPassageiros =0;
@@ -14,12 +27,12 @@ public class exer07_poo {
 
         for (int i = 0; i < aeronaves.length; i++){
 
-            if (aeronaves[i].passageiros > maiorPassageiros){
-                maiorPassageiros = aeronaves[i].passageiros;
+            if (aeronaves[i].getPassageiros() > maiorPassageiros){
+                maiorPassageiros = aeronaves[i].getPassageiros();
                 aeronaveMaiorPassageiros = aeronaves[i];
             }
         }
-        System.out.println(aeronaveMaiorPassageiros);
+
 
         double maiorAutonomia = 0;
         aeronave aeronaveMaiorAutonomia = null;
@@ -31,7 +44,7 @@ public class exer07_poo {
             }
         }
 
-        System.out.println(aeronaveMaiorAutonomia);
+
 
 
         double maiorDistancia = 0;
@@ -43,7 +56,7 @@ public class exer07_poo {
                 aeronaveMaiorDistancia = aeronaves[i];
             }
         }
-        System.out.println(aeronaveMaiorDistancia);
+
     }
 
 }
