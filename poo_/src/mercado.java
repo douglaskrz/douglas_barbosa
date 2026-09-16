@@ -29,7 +29,7 @@ public class mercado {
 
         @Override
         public String toString() {
-                return "mercado{" +
+                return
                         "nomeMercado='" + nomeMercado + '\'' +
                         ", macasVendidas=" + macasVendidas +
                         ", precoMaca=" + precoMaca +
