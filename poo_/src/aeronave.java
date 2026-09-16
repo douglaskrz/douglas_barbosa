@@ -22,6 +22,8 @@ public class aeronave {
         return calcularAutonomia()*velocidadeMax;
     }
 
+
+
     @Override
     public String toString() {
         return "aeronave{" +
