@@ -33,7 +33,6 @@ public class exer07_poo {
             }
         }
 
-
         double maiorAutonomia = 0;
         aeronave aeronaveMaiorAutonomia = null;
 
@@ -43,9 +42,6 @@ public class exer07_poo {
                 aeronaveMaiorAutonomia = aeronaves[i];
             }
         }
-
-
-
 
         double maiorDistancia = 0;
         aeronave aeronaveMaiorDistancia = null;

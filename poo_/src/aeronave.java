@@ -6,6 +6,8 @@ public class aeronave {
     private double capacidadeCombustivel;
     private double queimaCombustivel;
 
+
+
         public aeronave(String modelo, int passageiros, double velocidadeMax, double capacidadeCombustivel, double queimaCombustivel){
             setModelo(modelo);
             setPassageiros(passageiros);
@@ -13,6 +15,8 @@ public class aeronave {
             setCapacidadeCombustivel(capacidadeCombustivel);
             setQueimaCombustivel(queimaCombustivel);
         }
+
+
 
     public String getModelo() {
         return modelo;
@@ -74,6 +78,8 @@ public class aeronave {
         }
     }
 
+
+
     public double calcularAutonomia(){
         return capacidadeCombustivel/queimaCombustivel;
     }
@@ -81,6 +87,8 @@ public class aeronave {
     public double calcularDistanciaMaxima (){
         return calcularAutonomia()*velocidadeMax;
     }
+
+
 
     @Override
     public String toString() {
