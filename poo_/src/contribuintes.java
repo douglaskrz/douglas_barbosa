@@ -16,22 +16,26 @@ public class contribuintes {
         setImposto(imposto);
     }
 
+    public double calcularImposto(){
+        return rendaAnual * calcularAliquota();
+    }
 
 
-    public double calcularImposto(){// 0 a 4.000
+
+    private double calcularAliquota(){// 0 a 4.000
         if (rendaAnual<4000) {
-            return rendaAnual * 0;
+            return 0;
         }
         else if (rendaAnual <= 9000) {
-            return rendaAnual*0.058;
+            return 0.058;
         }
         else if ( rendaAnual <= 25000) {
-            return rendaAnual *0.15;
+            return 0.15;
         }
         else if (rendaAnual <= 35000) {
-            return rendaAnual * 0.275;
+            return 0.275;
         }
-        return rendaAnual * 0.3;
+        return 0.3;
     }
 
 
