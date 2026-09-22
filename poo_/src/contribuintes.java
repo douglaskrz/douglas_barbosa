@@ -18,6 +18,24 @@ public class contribuintes {
 
 
 
+    public double calcularImposto(){// 0 a 4.000
+        if (rendaAnual<4000) {
+            return rendaAnual * 0;
+        }
+        else if (rendaAnual <= 9000) {
+            return rendaAnual*0.058;
+        }
+        else if ( rendaAnual <= 25000) {
+            return rendaAnual *0.15;
+        }
+        else if (rendaAnual <= 35000) {
+            return rendaAnual * 0.275;
+        }
+        return rendaAnual * 0.3;
+    }
+
+
+
     public String getNome() {
         return nome;
     }
@@ -25,8 +43,9 @@ public class contribuintes {
     public void setNome(String nome) {
         if (nome == null || nome.isBlank()){
             System.out.println("Erro, nome inválido.");
+        }else {
+            this.nome = nome;
         }
-        this.nome = nome;
     }
 
     public String getCpf() {
@@ -34,10 +53,11 @@ public class contribuintes {
     }
 
     public void setCpf(String cpf) {
-        if (cpf == null || cpf.isBlank()){
+        if (cpf == null || cpf.isBlank() || cpf.length() != 11){
             System.out.println("Erro, CPF inválido.");
+        }else {
+            this.cpf = cpf;
         }
-        this.cpf = cpf;
     }
 
     public String getUf() {
@@ -45,10 +65,11 @@ public class contribuintes {
     }
 
     public void setUf(String uf) {
-        if (uf == null || uf.isBlank()){
+        if (uf == null || uf.isBlank() || uf.length() != 2){
             System.out.println("Erro, UF inválido.");
+        }else {
+            this.uf = uf;
         }
-        this.uf = uf;
     }
 
     public double getRendaAnual() {
@@ -58,8 +79,9 @@ public class contribuintes {
     public void setRendaAnual(double rendaAnual) {
         if (rendaAnual < 0){
             System.out.println("Erro, renda anual inválida.");
+        }else {
+            this.rendaAnual = rendaAnual;
         }
-        this.rendaAnual = rendaAnual;
     }
 
     public double getImposto() {
@@ -72,20 +94,14 @@ public class contribuintes {
 
 
 
-    public double imposto1(double rendaAnual){ // 0 a 4.000
-            return rendaAnual*0;
+    @Override
+    public String toString() {
+        return "contribuintes{" +
+                "nome='" + nome + '\'' +
+                ", cpf='" + cpf + '\'' +
+                ", uf='" + uf + '\'' +
+                ", rendaAnual=" + rendaAnual +
+                ", imposto=" + imposto +
+                '}';
     }
-    public double imposto2(double rendaAnual){ // 4.001 a 9.000
-            return rendaAnual*((rendaAnual*5.8)/100);
-    }
-    public double imposto3(double rendaAnual){ // 9.001 a 25.000
-        return rendaAnual*((rendaAnual*15)/100);
-    }
-    public double imposto4(double rendaAnual){ //25.001 a 35.000
-        return rendaAnual*((rendaAnual*27.5)/100);
-    }
-    public double imposto5(double rendaAnual){ // acima de 35.000
-        return rendaAnual*((rendaAnual*30)/100);
-    }
-
 }
