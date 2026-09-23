@@ -46,10 +46,9 @@ public class contribuintes {
 
     public void setNome(String nome) {
         if (nome == null || nome.isBlank()){
-            System.out.println("Erro, nome inválido.");
-        }else {
-            this.nome = nome;
+            throw new IllegalArgumentException("Nome inválido.");
         }
+        this.nome = nome;
     }
 
     public String getCpf() {
@@ -58,10 +57,9 @@ public class contribuintes {
 
     public void setCpf(String cpf) {
         if (cpf == null || cpf.isBlank() || cpf.length() != 11){
-            System.out.println("Erro, CPF inválido.");
-        }else {
-            this.cpf = cpf;
+            throw new IllegalArgumentException("Erro, CPF inválido.");
         }
+            this.cpf = cpf;
     }
 
     public String getUf() {
@@ -70,10 +68,9 @@ public class contribuintes {
 
     public void setUf(String uf) {
         if (uf == null || uf.isBlank() || uf.length() != 2){
-            System.out.println("Erro, UF inválido.");
-        }else {
-            this.uf = uf;
+            throw new IllegalArgumentException("Erro, UF inválido.");
         }
+            this.uf = uf;
     }
 
     public double getRendaAnual() {
@@ -82,10 +79,9 @@ public class contribuintes {
 
     public void setRendaAnual(double rendaAnual) {
         if (rendaAnual < 0){
-            System.out.println("Erro, renda anual inválida.");
-        }else {
-            this.rendaAnual = rendaAnual;
+            throw new IllegalArgumentException("Erro, renda anual inválida.");
         }
+            this.rendaAnual = rendaAnual;
     }
 
     public double getImposto() {
