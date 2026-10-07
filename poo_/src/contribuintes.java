@@ -59,7 +59,7 @@ public class contribuintes {
         if (cpf == null || cpf.isBlank() || cpf.length() != 11){
             throw new IllegalArgumentException("Erro, CPF inválido.");
         }
-            this.cpf = cpf;
+        this.cpf = cpf;
     }
 
     public String getUf() {
@@ -70,7 +70,7 @@ public class contribuintes {
         if (uf == null || uf.isBlank() || uf.length() != 2){
             throw new IllegalArgumentException("Erro, UF inválido.");
         }
-            this.uf = uf;
+        this.uf = uf;
     }
 
     public double getRendaAnual() {
@@ -81,7 +81,7 @@ public class contribuintes {
         if (rendaAnual < 0){
             throw new IllegalArgumentException("Erro, renda anual inválida.");
         }
-            this.rendaAnual = rendaAnual;
+        this.rendaAnual = rendaAnual;
     }
 
     public double getImposto() {
