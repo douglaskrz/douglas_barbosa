@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
     public class Floricultura {
-        // Atributo que armazena a coleção de objetos 'Flor'
+
         private List<flor> flores;
 
         public Floricultura() {
@@ -23,4 +23,4 @@ import java.util.List;
             return floresPesquisa;
         }
     }
-}
+
