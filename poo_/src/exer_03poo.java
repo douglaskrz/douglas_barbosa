@@ -1,14 +1,14 @@
 public class exer_03poo {
     public static void main(String[] args) {
 
-        produto produto1 = new produto();
+        produtoConstrucao produto1 = new produtoConstrucao();
 
         produto1.nome = "Caneta ESF";
         produto1.descricao = "Caneta esferográfica 5mm";
         produto1.precoUnitario = 1.2;
         produto1.desconto = 2;
 
-        produto produto2 = new produto();
+        produtoConstrucao produto2 = new produtoConstrucao();
 
         produto2.nome = "Lápis";
         produto2.descricao = "Lápis FaberCastel 5b";
