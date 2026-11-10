@@ -1,4 +1,4 @@
-public class exer_04 {
+public class exer04_RO {
     public static void main(String[] args) {
 
         Produto p1 = new Produto("", "Riachuelo", 9.99, 10);
