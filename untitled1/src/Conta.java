@@ -1,5 +1,5 @@
 public class Conta {
-    
+
     private String nomeTitular;
     private double saldo;
 
@@ -58,6 +58,6 @@ public class Conta {
 
     @Override
     public String toString() {
-        return "Conta [nomeTitular=" + nomeTitular + ", saldo=" + saldo + "]";
+        return "Conta - nomeTitular = " + nomeTitular + ". Saldo =" + saldo;
     }
 }
