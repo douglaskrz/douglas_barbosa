@@ -6,16 +6,18 @@ public class Loja {
     private List<Produto> produtos;
 
     public Loja() {
-        produtos = new ArrayList<>();
+        this.produtos = new ArrayList<>();
     }
 
     public void adicionarProduto(Produto p) {
         produtos.add(p);
     }
 
-    public Produto produtoMaisCaro() {
+
+    public Produto produtoMaisCaro(String marca) {
         Produto produtoMaisCaro = null;
         double precoMaior = Double.MIN_VALUE;
+
         for (Produto p : produtos) {
             if (marca.equals(p.getMarca()) && p.getPreco() > precoMaior) {
                 produtoMaisCaro = p;
@@ -24,6 +26,7 @@ public class Loja {
         }
         return produtoMaisCaro;
     }
+
     public List<Produto> buscaEstoque(double precoInicial, double precoFinal, String marca) {
         List<Produto> buscaEstoque = new ArrayList<>();
         for (Produto p : produtos) {
@@ -34,5 +37,4 @@ public class Loja {
         return buscaEstoque;
     }
 }
-
 

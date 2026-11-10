@@ -2,19 +2,15 @@ public class Produto {
 
     private String modelo;
     private String marca;
-    private Double preco;
-    private int qntEstoque;
+    private double preco;
+    private int qtdEstoque;
 
-
-
-    public Produto(String modelo, String marca, Double preco, int qntEstoque ) {
-        setMarca(marca);
+    public Produto(String modelo, String marca, double preco, int qtdEstoque) {
         setModelo(modelo);
+        setMarca(marca);
         setPreco(preco);
-        setQntEstoque(qntEstoque);
+        setQtdEstoque(qtdEstoque);
     }
-
-
 
     public String getModelo() {
         return modelo;
@@ -38,54 +34,45 @@ public class Produto {
         this.marca = marca;
     }
 
-    public Double getPreco() {
+    public double getPreco() {
         return preco;
     }
 
-    public void setPreco(Double preco) {
+    public void setPreco(double preco) {
         if (preco <= 0) {
             throw new IllegalArgumentException("preco ta errado");
         }
         this.preco = preco;
     }
 
-    public int getQntEstoque() {
-        return qntEstoque;
+    public int getQtdEstoque() {
+        return qtdEstoque;
     }
 
-    public void setQntEstoque(int qntEstoque) {
-        if (qntEstoque < 0) {
+    public void setQtdEstoque(int qtdEstoque) {
+        if (qtdEstoque < 0) {
             throw new IllegalArgumentException("invalido");
         }
-        this.qntEstoque = qntEstoque;
+        this.qtdEstoque = qtdEstoque;
     }
-
-
-    public void aumentarQuantidadeEstoque(int aumento){
-        if (aumento <= 0){
-            throw new IllegalArgumentException("Erro, quantidade inválida.");
-        }
-            qntEstoque = qntEstoque + aumento;
-        // qtdEstoque += aumento;
-    }
-
-    public void vendas(int subtracao){
-        if (subtracao  > qntEstoque || subtracao <= 0){
-            throw new IllegalArgumentException("Erro, quantidade inválida.");
-        }
-            qntEstoque = qntEstoque - subtracao;
-        // qtdestoque -= venda;
-    }
-
-
 
     @Override
     public String toString() {
-        return "Produtos{" +
-                "modelo='" + modelo + '\'' +
-                ", marca='" + marca + '\'' +
-                ", preco=" + preco +
-                ", qntEstoque=" + qntEstoque +
-                '}';
+        return "Produtos{" + "modelo='" + modelo + '\'' + ", marca='" + marca + '\'' + ", preco=" + preco
+                + ", qtdEstoque=" + qtdEstoque + '}';
+    }
+
+    public void aumentarQuantidadeDoEstoque(int aumento) {
+        if (aumento <= 0) {
+            throw new IllegalArgumentException("Erro, quantidade de aumento inválida");
+        }
+        qtdEstoque = qtdEstoque + aumento;
+    }
+
+    public void venderQuantidadeDeEstoque(int venda) {
+        if (venda > qtdEstoque || venda <= 0) {
+            throw new IllegalArgumentException("Erro, quantidade de venda inválida");
+        }
+        qtdEstoque = qtdEstoque - venda;
     }
 }
